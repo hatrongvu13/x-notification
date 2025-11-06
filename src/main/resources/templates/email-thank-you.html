@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Cảm ơn bạn đã quan tâm</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background: #f5f7fa; color: #333; margin: 0; padding: 0; }
+    .container { background: #fff; max-width: 640px; margin: 30px auto; border-radius: 12px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    .btn { display: inline-block; background: #0056d2; color: white; text-decoration: none; padding: 10px 20px; border-radius: 6px; margin-top: 15px; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2>Xin chào <span th:text="${receiverName}">bạn</span>,</h2>
+  <p>Tôi là <strong th:text="${senderName}">Nguyễn Văn A</strong>. Cảm ơn bạn đã quan tâm đến hồ sơ của tôi.</p>
+  <p>Tôi gửi kèm CV trong email này, hoặc bạn có thể xem thêm thông tin tại trang GitHub cá nhân:</p>
+  <p style="text-align:center;">
+    <a class="btn" th:href="${githubLink}">Xem hồ sơ GitHub</a>
+  </p>
+  <p>Trân trọng,<br><strong th:text="${senderName}">Nguyễn Văn A</strong><br><em th:text="${senderEmail}">nguyenvana@gmail.com</em></p>
+</div>
+</body>
+</html>

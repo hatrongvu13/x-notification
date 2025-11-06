@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Cảm ơn bạn đã quan tâm</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Roboto, sans-serif;
+            background-color: #f7f9fc;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 640px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .header {
+            background-color: #004aad;
+            color: #fff;
+            padding: 20px 30px;
+        }
+        .header h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+        .body {
+            padding: 30px;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+        .body a {
+            color: #004aad;
+            text-decoration: none;
+        }
+        .footer {
+            background-color: #f1f3f8;
+            text-align: center;
+            padding: 15px;
+            font-size: 13px;
+            color: #777;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #004aad;
+            color: #fff !important;
+            padding: 10px 20px;
+            border-radius: 6px;
+            margin-top: 15px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h2>Xin chào {{receiverName}},</h2>
+    </div>
+
+    <div class="body">
+        <p>
+            Tôi là <strong>{{senderName}}</strong>, cảm ơn bạn đã quan tâm tới hồ sơ của tôi.
+        </p>
+
+        <p>
+            Trong email này, tôi gửi kèm <strong>CV</strong> của mình để bạn có thể tham khảo thêm thông tin chi tiết.
+            Ngoài ra, bạn cũng có thể xem thêm các dự án cá nhân tại:
+        </p>
+
+        <p style="text-align:center">
+            <a href="{{githubLink}}" class="btn">Xem hồ sơ GitHub</a>
+        </p>
+
+        <p>
+            Tôi rất mong có cơ hội được hợp tác và trao đổi thêm về công việc trong thời gian tới.
+        </p>
+
+        <p>Trân trọng,<br><strong>{{senderName}}</strong><br><em>{{senderEmail}}</em></p>
+    </div>
+
+    <div class="footer">
+        Email này được gửi tự động từ hệ thống Notification Service.<br/>
+        Vui lòng không trả lời trực tiếp qua email này.
+    </div>
+</div>
+
+</body>
+</html>
