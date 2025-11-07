@@ -34,6 +34,10 @@ server:
   port: 8888
   servlet:
     context-path: /x-notification
+telegram:
+  bot:
+    token: ${BOT_TOKEN:your_bot_token}
+    chatId : ${CHAT_ID:-4515196251}
 spring:
   application:
     name: x-notification
