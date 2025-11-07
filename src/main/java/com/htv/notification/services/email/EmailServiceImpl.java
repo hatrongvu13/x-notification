@@ -1,5 +1,8 @@
 package com.htv.notification.services.email;
 
+import com.htv.notification.data.enums.EmailTemplateType;
+import com.htv.notification.data.request.email.EmailRequest;
+import com.htv.notification.data.response.email.EmailResponse;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import lombok.RequiredArgsConstructor;
@@ -35,11 +38,23 @@ public class EmailServiceImpl implements EmailService {
         mimeMessageHelper.setSubject(subject);
         mimeMessageHelper.setText(htmlContent, true);
 
-        if (file!= null && file.exists()) {
+        if (file != null && file.exists()) {
             FileSystemResource fileSystemResource = new FileSystemResource(file);
             mimeMessageHelper.addAttachment(fileSystemResource.getFilename(), fileSystemResource);
         }
 
         mailSender.send(mimeMessage);
     }
+
+    @Override
+    public EmailResponse sendEmailCV(EmailRequest emailRequest) throws MessagingException {
+        send(EmailTemplateType.CV.getTemplate(),
+                emailRequest.getTo(),
+                emailRequest.getCc(),
+                emailRequest.getSubject(),
+                emailRequest.getData(),
+                emailRequest.getAttachment());
+        return null;
+    }
+
 }
