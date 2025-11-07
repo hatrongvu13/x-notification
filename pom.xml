@@ -34,6 +34,7 @@
         <commons-io>2.16.1</commons-io>
         <commons-lang3>3.18.0</commons-lang3>
         <commons-collections4>4.4</commons-collections4>
+        <telegram.version>7.9.1</telegram.version>
     </properties>
     <dependencies>
         <dependency>
@@ -153,6 +154,16 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-collections4</artifactId>
             <version>${commons-collections4}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.telegram</groupId>
+            <artifactId>telegrambots-springboot-longpolling-starter</artifactId>
+            <version>${telegram.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.telegram</groupId>
+            <artifactId>telegrambots-client</artifactId>
+            <version>${telegram.version}</version>
         </dependency>
     </dependencies>
 
