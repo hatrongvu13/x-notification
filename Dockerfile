@@ -1,4 +1,4 @@
-FROM amazoncorretto
+FROM eclipse-temurin:21-jre-alpine
 
 LABEL authors="hatrongvu"
 
