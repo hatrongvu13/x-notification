@@ -15,9 +15,9 @@ import org.telegram.telegrambots.meta.generics.TelegramClient;
 public class JaxtonyBot implements SpringLongPollingBot, LongPollingSingleThreadUpdateConsumer {
     private final TelegramClient telegramClient;
 
-    public JaxtonyBot( @Value("telegram.bot.token") String token) {
-        this.telegramClient = new OkHttpTelegramClient(getBotToken());
+    public JaxtonyBot( @Value("${telegrambot.bot-token}") String token) {
         this.token = token;
+        this.telegramClient = new OkHttpTelegramClient(getBotToken());
     }
 
     private String token;

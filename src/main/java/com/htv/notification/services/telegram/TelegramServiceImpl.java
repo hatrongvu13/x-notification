@@ -17,7 +17,7 @@ public class TelegramServiceImpl implements TelegramService {
 
     private final JaxtonyBot jaxtonyBot;
 
-    @Value("${telegram.bot.chatId}")
+    @Value("${telegrambot.chatId}")
     private Long chatId;
 
     @Override

@@ -35,10 +35,11 @@ server:
   port: 8888
   servlet:
     context-path: /x-notification
-telegram:
-  bot:
-    token: ${BOT_TOKEN:your_bot_token}
-    chatId : ${CHAT_ID:-4515196251}
+telegrambot:
+  bot-token: ${BOT_TOKEN:your-token}
+  bot-username: htv_ip_bot
+  chatId : ${CHAT_ID:-1002495395116}
+  delete-webhook-on-startup: false
 spring:
   application:
     name: x-notification
@@ -46,7 +47,7 @@ spring:
     host: smtp.gmail.com
     port: 587
     username: hatrongvu13@gmail.com
-    password: your-app-password
+    password: your-pass
     properties:
       mail.smtp.auth: true
       mail.smtp.starttls.enable: true
