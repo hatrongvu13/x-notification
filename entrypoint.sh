@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 echo "Starting with java:"
 java -version
 mkdir -p /otp/service/resources

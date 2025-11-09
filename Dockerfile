@@ -8,14 +8,14 @@ COPY /target/*.jar /opt/service/app.jar
 
 COPY /src/main/resources /opt/service/resources_default
 
-COPY entrypoint.sh /entrypoint.sh
+COPY entrypoint.sh entrypoint.sh
 
-RUN chmod +x /entrypoint.sh
+RUN chmod +x /opt/service/entrypoint.sh
 
 RUN chgrp -R 0 ./ && chmod -R g=u ./
 
 RUN ls -l /
 
-RUN cat /entrypoint.sh
+RUN cat /opt/service/entrypoint.sh
 
-ENTRYPOINT ["java", "-jar","/opt/service/app.jar"]
+ENTRYPOINT ["sh","/opt/service/entrypoint.sh"]
