@@ -18,4 +18,4 @@ RUN ls -l /
 
 RUN cat /entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["java", "-jar","/opt/service/app.jar"]
