@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: x-notification
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: x-notification
+  template:
+    metadata:
+      labels:
+        app: x-notification
+    spec:
+      containers:
+        - name: x-notification
+          image: ghcr.io/hatrongvu13/x-notification:latest
+          imagePullPolicy: Always
+          env:
+            - name: BOT_TOKEN
+              value: "your-token"
+            - name: CHAT_ID
+              value: '-1002495395116'
+      imagePullSecrets:
+        - name: ghcr-secret # your secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: x-notification
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: x-notification

@@ -18,6 +18,7 @@ security:
     permit-all:
       - /api/user/login
       - /api/user/register
+      - /api/telegram/test
     cross-origin:
       - "*"
     credentials: false
@@ -44,8 +45,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username:
-    password:
+    username: hatrongvu13@gmail.com
+    password: your-app-password
     properties:
       mail.smtp.auth: true
       mail.smtp.starttls.enable: true
